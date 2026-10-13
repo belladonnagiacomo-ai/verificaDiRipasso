@@ -5,6 +5,7 @@ namespace verificaDiRipasso
     public partial class cifra : Form
     {
         List<string> Lettura = new List<string>();
+
         string alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         
         public cifra()
@@ -57,6 +58,7 @@ namespace verificaDiRipasso
                     lista.Items.Add(pa);
 
                 }
+
 
 
 
