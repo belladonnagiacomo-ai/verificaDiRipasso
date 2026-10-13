@@ -5,7 +5,7 @@ namespace verificaDiRipasso
     public partial class cifra : Form
     {
         List<string> Lettura = new List<string>();
-        string alfabeto = "abcdefghijklmnopqrstuvwxyz";
+        string alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         
         public cifra()
         {
