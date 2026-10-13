@@ -16,6 +16,7 @@ namespace verificaDiRipasso
         {
             char[] alfa = alfabeto.ToCharArray();
             int l = 0;
+            bool ver = false;
             using (StreamReader sr = new StreamReader("file.txt"))
             {
                 while (!sr.EndOfStream)
@@ -26,28 +27,41 @@ namespace verificaDiRipasso
                 }
                 
             }
-            string parola;
-            
-            for (int i = 0; i < Lettura.Count; i++)
+            int b = 0;
+            string pa = "";
+            for (int i = 0; i < Lettura.Count; i = i++)
             {
-                if (i % 2 != 0 && i != 0)
+                char[] parola = Lettura[i].ToCharArray();
+
+                for(int a = 0;  a < parola.Length; a++)
                 {
-                    
-                    Lettura[i].ToLower();
-                    parola = Lettura[i];
-                    parola.Split();
-                    char[] pa = parola.ToCharArray();
-                    for (int k = 0; k < pa.Length; k++)
+                    b = 0;
+                    while (parola[a] != alfa[b])
+
                     {
-                        
+                        b++;
                     }
-                    lista.Items.Add(Lettura[i]);
+                    if(b > 2)
+                    {
+                        b -= 3;
+                    }
+                    else
+                    {
+                        b = alfa.Length - (3 - b);
+                    }
+                    parola[a] = alfa[b];
+                    for(int m = 0; m < parola.Length; m++)
+                    {
+                        pa = pa + parola[m];
+                    }
+                    lista.Items.Add(pa);
 
                 }
-                else
-                {
-                }
+
+
+
             }
+
 
         }
     }
